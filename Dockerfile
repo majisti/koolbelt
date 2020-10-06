@@ -1,10 +1,10 @@
-FROM digitalocean/doctl:1.46.0 as doctl
-FROM alpine/helm:3.3.4 as helm
-FROM bitnami/kubectl:1.19.2 as kubectl
-FROM nosinovacao/fluxctl:19.12.0 as fluxctl
-FROM argoproj/argocd:v1.7.7 as argocd
+FROM digitalocean/doctl:latest as doctl
+FROM alpine/helm:latest as helm
+FROM bitnami/kubectl:latest as kubectl
+FROM nosinovacao/fluxctl:latest as fluxctl
+FROM argoproj/argocd:latest as argocd
 
-FROM alpine:latest
+FROM alpine:latest as tools
 
 WORKDIR /usr/local/bin
 
@@ -15,5 +15,22 @@ COPY --from=fluxctl /usr/local/bin/fluxctl .
 COPY --from=argocd /usr/local/bin/argocd .
 
 RUN chown root:root ./*
-
 CMD ls -l /usr/local/bin
+
+FROM python:alpine as versions
+
+COPY --from=tools /usr/local/bin/ /usr/local/bin/
+
+WORKDIR /opt
+COPY src/get-versions.py ./
+
+RUN python get-versions.py
+
+FROM node:12.3 as readme-generation
+
+WORKDIR /opt
+
+COPY package.json current-versions.json src/readme.mustache src/generate-versions.js ./
+COPY --from=versions /opt/versions.json ./
+
+RUN yarn install
