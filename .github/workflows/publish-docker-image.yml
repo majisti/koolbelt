@@ -17,7 +17,7 @@ jobs:
             -   name: Checkout
                 uses: actions/checkout@v2
             -   name: Git credentials
-                uses: oleksiyrudenko/gha-git-credentials@v1
+                uses: oleksiyrudenko/gha-git-credentials@v2.1
                 with:
                     token: '${{ secrets.GITHUB_TOKEN }}'
             -   name: Synchronize README and current versions
