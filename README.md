@@ -6,11 +6,11 @@ It is a simple multi stage docker build with the latest versions of the tools.
 
 Currently packaged tools and their versions:
 
-    - **dotcl**: 1.52.0
-    - **helm**: 3.4.1
-    - **kubectl**: 1.18.12
-    - **argocd**: 1.8.0
-    - **fluxcd**: 1.17.0
+    - **dotcl**: 1.61.0
+    - **helm**: 3.6.1
+    - **kubectl**: 1.21.1
+    - **argocd**: 2.0.0
+    - **fluxcd**: 1.20.2
 
 We probably mostly want to use that as a local image on our machine, plugging
 this to a CI will probably demand lots of network bandwidth as this image will
