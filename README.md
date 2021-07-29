@@ -9,7 +9,7 @@ Currently packaged tools and their versions:
     - **dotcl**: 1.62.0
     - **helm**: 3.6.3
     - **kubectl**: 1.21.3
-    - **argocd**: 2.0.0
+    - **argocd**: 2.1.0
     - **fluxcd**: 1.20.2
 
 We probably mostly want to use that as a local image on our machine, plugging
