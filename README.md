@@ -8,7 +8,7 @@ Currently packaged tools and their versions:
 
     - **dotcl**: 1.93.1
     - **helm**: 3.11.3
-    - **kubectl**: 1.26.44.5.7
+    - **kubectl**: 1.27.15.0.1
     - **argocd**: 2.3.0
     - **fluxcd**: 1.20.2
 
