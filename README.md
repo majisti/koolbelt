@@ -6,7 +6,7 @@ It is a simple multi stage docker build with the latest versions of the tools.
 
 Currently packaged tools and their versions:
 
-    - **dotcl**: 1.125.0
+    - **dotcl**: 1.125.1
     - **helm**: 3.17.3
     - **kubectl**: 
     - **argocd**: 2.3.0
